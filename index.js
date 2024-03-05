@@ -15,22 +15,23 @@ const show = () => {
 
       let category = document.createElement("p")
       category.innerHTML=blogs[i].category
+      category.setAttribute("class","categoryy")
       
-      
-      
- 
       let like=document.createElement("button")
       like.innerHTML="like"
+      like.setAttribute("class","likee")
+      
       like.addEventListener("click",()=>{
        
-       alert("like a msg")
+       alert("like a msg" )
         show();
-
-      })
+       })
 
      
       let del=document.createElement("button")
       del.innerHTML="DELETE"
+
+      del.setAttribute("class","dell")
       del.addEventListener("click",()=>{
         blogs.splice(i,1)
         // console.log(i)
@@ -38,9 +39,6 @@ const show = () => {
 
       })
        
-     
-
-    
       let div=document.createElement("div")
       div.append(img,title,content,category,like,del)
       title.setAttribute("class","title")
@@ -60,31 +58,12 @@ const formdata = (e) => {
  let img=document.getElementById("img").value
  let content=document.getElementById("content").value
  let category=document.getElementById("category").value
- 
-
-  if( title.length<2){
-    alert("please enter valid title")
-    document.getElementById("t-error").innerHTML="please enter valid title"
-    document.getElementById("t-error").style.color="red"
-    return
-  }
- 
-  
-  
- 
-  
-
-
-
-let blog={
+ let blog={
     title:title,
     img:img,
     category:category,
     content:content,
-    
-
-    
-}
+    }
 blogs.push(blog)
 show()
 console.log(blogs);
